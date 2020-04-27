@@ -39,6 +39,8 @@ $.ajax({
   })
   .always(function (res) {
     $(".item").click((n) => {
+      recall();
+
       // port.postMessage({ joke: "Knock knock" });
       // port.onMessage.addListener(function (msg) {
       //   if (msg.question == "Who's there?")
@@ -46,10 +48,10 @@ $.ajax({
       //   else if (msg.question == "Madame who?")
       //     port.postMessage({ answer: "Madame... Bovary" });
       // });
-      window.postMessage(
-        { type: "FROM_PAGE", text: "Hello from the webpage!" },
-        "*"
-      );
+      // window.postMessage(
+      //   { type: "FROM_PAGE", text: "Hello from the webpage!" },
+      //   "*"
+      // );
 
       // https: chrome.extension.sendMessage({
       //   action: "e",
@@ -89,7 +91,6 @@ $.ajax({
       // });
 
       // var port = chrome.runtime.connect();
-      recall();
       // window.addEventListener(
       //   "message",
       //   function (event) {
