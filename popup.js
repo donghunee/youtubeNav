@@ -46,7 +46,6 @@ $.ajax({
       //   else if (msg.question == "Madame who?")
       //     port.postMessage({ answer: "Madame... Bovary" });
       // });
-
       window.postMessage(
         { type: "FROM_PAGE", text: "Hello from the webpage!" },
         "*"
@@ -113,7 +112,11 @@ const recall = () => {
       chrome.tabs.sendMessage(tabs[0].id, { greeting: "hello" }, function (
         response
       ) {
-        console.log(response.farewell);
+        try {
+          console.log(response.farewell);
+        } catch (error) {
+          console.log(error);
+        }
       });
     });
     console.log("디버깅");
