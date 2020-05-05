@@ -75,9 +75,12 @@
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   console.log("qeeawd");
   // window.location.href = "http://www.abc.com/";
-  let ma = Math.floor(Math.random() * 100) + 1;
-  location.href = `/watch?v=W2Kpi5zDABE&t=${ma}s`;
-  if (request.greeting == "hello") sendResponse({ farewell: "제발" });
+  // let ma = Math.floor(Math.random() * 100) + 1;
+  let result = request.result;
+  let params = request.params;
+  console.log(result);
+  location.href = `/watch?v=${params}&t=${result}s`;
+  sendResponse({ farewell: "제발" });
 });
 
 // var port = chrome.runtime.connect({ name: "knockknock" });

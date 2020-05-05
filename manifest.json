@@ -1,15 +1,19 @@
 {
   "name": "YoutubeNav",
-  "version": "1.1",
-  "description": "A browser action with a popup dump of all bookmarks, including search, add, edit and delete.",
+  "version": "1.2",
+  "description": "유튜브 댓글중 타임라인을 크롤링하여 모아서 보여주는 확장프로그램입니다.",
+  "icons": {
+    "128": "icon2.png"
+  },
+
   "permissions": [
-    "bookmarks",
     "tabs",
-    "<all_urls>"
+    "activeTab",
+    "https://www.youtube.com/*"
   ],
   "browser_action": {
-    "default_title": "My Bookmarks",
-    "default_icon": "icon.png",
+    "default_title": "YoutubeNav",
+    "default_icon": "icon2.png",
     "default_popup": "popup.html"
   },
   "background": {
@@ -17,7 +21,7 @@
     "persistent": false
   },
   "content_scripts": [{
-    "matches": ["https://*.youtube.com/*"],
+    "matches": ["https://www.youtube.com/*"],
     "js": ["getSource.js"]
   }],
   "manifest_version": 2,
