@@ -73,13 +73,30 @@
 // });
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  console.log("qeeawd");
   // window.location.href = "http://www.abc.com/";
   // let ma = Math.floor(Math.random() * 100) + 1;
-  let result = request.result;
-  let params = request.params;
-  console.log(result);
-  location.href = `/watch?v=${params}&t=${result}s`;
+  const result = request.result;
+  const params = request.params;
+
+  // $.ajax({
+  //   url: `/watch?v=${params}&t=${result}s`,
+  //   // context: document.body,
+  // })
+  //   .done(function (res) {
+  //     // const result = res.json();
+  //     // console.log(result);
+  //     // const resultArr = res.items;
+  //     console.log(res);
+  //     $(".style-scope yt-img-shadow").css("display", "none");
+  //     // alert(res);
+  //   })
+  //   .fail(function (xhr, status, errorThrown) {
+  //     // alert("fail");
+  //   });
+  $("#container").append(
+    `<div id="content-text" slot="content" split-lines="" class="style-scope ytd-comment-renderer"><a class="yt-simple-endpoint style-scope yt-formatted-string" spellcheck="false" href="/watch?v=q75scBzQcHk&amp;t=55s" dir="auto">0:55</a></div>`
+  );
+  // location.href = `/watch?v=${params}&t=${result}s`;
   sendResponse({ farewell: "제발" });
 });
 

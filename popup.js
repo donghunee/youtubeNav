@@ -88,10 +88,7 @@ function ajaj(params) {
             // console.log(xx);
             // console.log(yy);
             const ar = ho(str);
-            console.log(str);
             for (let i = 0; i < xx.length; i++) {
-              console.log(xx[i]);
-              console.log(yy[i]);
               if (xx[i] >= 60) {
                 continue;
               }
@@ -101,18 +98,16 @@ function ajaj(params) {
                   break;
                 }
                 preResult = result;
-                console.log(ar[i]);
                 // console.log(result);
                 // console.log(xx[i]);
                 // console.log(yy[i]);
-                console.log(`${xx[i]}:${yy[i]}///${str}`);
                 if (ar[i]) {
                   $("#item-wrap").append(
-                    `<div name="${result}" class="item"><span style="color:#1469d6">${xx[i]}:${yy[i]}</span>${ar[i]}</div>`
+                    `<div name="${result}" class="item"><span style="color:#1469d6;pointer-events: none; ">${xx[i]}:${yy[i]}</span>${ar[i]}</div>`
                   );
                 } else {
                   $("#item-wrap").append(
-                    `<div name="${result}" class="item"><span style="color:#1469d6">${xx[i]}:${yy[i]}</span></div>`
+                    `<div name="${result}" class="item"><span style="color:#1469d6;pointer-events: none; ">${xx[i]}:${yy[i]}</span></div>`
                   );
                 }
               } else {
@@ -176,12 +171,10 @@ function test(params, token) {
           preResult = 0;
           var xx = fn(str);
           var yy = rn(str);
-          console.log(str);
+          // console.log(str);
           if (xx && yy) {
             const ar = ho(str);
             for (let i = 0; i < xx.length; i++) {
-              console.log(xx[i]);
-              console.log(yy[i]);
               if (xx[i] >= 60) {
                 continue;
               }
@@ -194,16 +187,16 @@ function test(params, token) {
                 // console.log(result);
                 // console.log(xx[i]);
                 // console.log(yy[i]);
-                console.log(ar[i]);
-                console.log(`${xx[i]}:${yy[i]}///${str}`);
+                // console.log(ar[i]);
+                // console.log(`${xx[i]}:${yy[i]}///${str}`);
 
                 if (ar[i]) {
                   $("#item-wrap").append(
-                    `<div name="${result}" class="item"><span style="color:#1469d6">${xx[i]}:${yy[i]}</span>${ar[i]}</div>`
+                    `<div name="${result}" class="item"><span style="color:#1469d6;pointer-events: none; ">${xx[i]}:${yy[i]}</span>${ar[i]}</div>`
                   );
                 } else {
                   $("#item-wrap").append(
-                    `<div name="${result}" class="item"><span style="color:#1469d6">${xx[i]}:${yy[i]}</span></div>`
+                    `<div name="${result}" class="item"><span style="color:#1469d6;pointer-events: none; ">${xx[i]}:${yy[i]}</span></div>`
                   );
                 }
               } else {
@@ -226,7 +219,6 @@ function test(params, token) {
     })
     .always(function (res) {
       $(".item").click((e) => {
-        console.log();
         const result = e.target.getAttribute("name");
         recall(result, params);
       });

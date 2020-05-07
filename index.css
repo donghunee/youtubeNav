@@ -21,16 +21,18 @@
 }
 
 #profile {
-  height: 60px;
+  height: 70px;
   width: 100%;
   display: flex;
-  font-weight: bold;
+  font-weight: normal;
+  flex-direction: column;
   justify-content: center;
   text-align: center;
   align-items: center;
-  font-size: 10px;
+  font-size: 11px;
   background: rgba(204, 204, 204, 0.356);
 }
+
 /* 
 .item:hover {
   background: grey;
