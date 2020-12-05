@@ -17,7 +17,7 @@
   },
   "content_scripts": [{
     "matches": ["https://www.youtube.com/*"],
-    "js": ["jquery.js", "getSource.js"]
+    "js": ["jquery.js", "getSource.js", "content.js"]
   }],
   "manifest_version": 2,
   "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
